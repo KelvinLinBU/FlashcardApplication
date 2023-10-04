@@ -37,6 +37,11 @@ class Flashcards : ComponentActivity() {
             var operation = generate_operation()
             findViewById<TextView>(R.id.top_operand).text = top_operand.toString()
             findViewById<TextView>(R.id.bottom_operand).text = bottom_operand.toString()
+            if (operation == 1) {
+                findViewById<TextView>(R.id.operation).text = "+"
+            } else {
+                findViewById<TextView>(R.id.operation).text = "-"
+            }
             submit.setOnClickListener {
                 if(nums > 10){
                     Toast.makeText(this, "Game Over! Your Score Is: $score", Toast.LENGTH_SHORT).show()

@@ -4,33 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Flashcards"
     android:theme="@style/AppTheme"
+    tools:context=".Flashcards"
 
     >
 
 
-
     <TextView
         android:id="@+id/bottom_operand"
-        android:layout_width="126dp"
-        android:layout_height="106dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginBottom="44dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/generate_button"
+        android:layout_width="124dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="64dp"
+        android:textAlignment="center"
+        android:textSize="75dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toEndOf="@+id/operation"
-        app:layout_constraintTop_toBottomOf="@+id/top_operand"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/top_operand" />
 
     <TextView
         android:id="@+id/flashtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="60dp"
         android:text="Flashcard Application"
         android:textAlignment="center"
         android:textSize="30dp"
@@ -41,75 +37,74 @@
 
     <TextView
         android:id="@+id/top_operand"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/bottom_operand"
+        android:layout_width="123dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="144dp"
+        android:textAlignment="center"
+        android:textSize="75dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.769"
+        app:layout_constraintHorizontal_bias="0.795"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/flashtitle"
-        app:layout_constraintVertical_bias="0.075" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/operation"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/solution_text"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="184dp"
+        android:textAlignment="center"
+        android:textSize="75dp"
         app:layout_constraintEnd_toStartOf="@+id/bottom_operand"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.015"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.701" />
+        app:layout_constraintTop_toBottomOf="@+id/flashtitle" />
+
 
     <Button
         android:id="@+id/generate_button"
-        android:layout_width="158dp"
-        android:layout_height="63dp"
-        android:layout_marginBottom="160dp"
-        android:text="Button"
+        android:layout_width="228dp"
+        android:layout_height="121dp"
+        android:layout_marginBottom="36dp"
+        android:text="Generate!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/solution_text"
-        android:layout_width="102dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="80dp"
-        android:text="Input Solution:"
+        android:layout_width="166dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:text="Solution:"
+        android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.077"
-        app:layout_constraintEnd_toStartOf="@+id/solution_input" />
-
+        app:layout_constraintTop_toBottomOf="@+id/operation"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/solution_input"
-        android:layout_width="170dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
+        android:layout_width="154dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
         android:hint="guess"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/submitsolution_button"
-        app:layout_constraintStart_toEndOf="@+id/solution_text"
-        app:layout_constraintTop_toBottomOf="@+id/generate_button"
-        app:layout_constraintVertical_bias="0.382" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottom_operand" />
 
     <Button
         android:id="@+id/submitsolution_button"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="171dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="28dp"
         android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.627"
-        app:layout_constraintStart_toEndOf="@+id/solution_input"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898" />
+        app:layout_constraintTop_toBottomOf="@+id/solution_input" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
