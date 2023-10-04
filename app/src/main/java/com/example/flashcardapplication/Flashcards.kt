@@ -20,59 +20,70 @@ import android.widget.TextView
 import android.widget.Toast
 
 class Flashcards : ComponentActivity() {
-    var score = 0 // Declare score as a class-level variable
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flashcards)
-
-        val generate = findViewById<Button>(R.id.generate_button)
-        generate.setOnClickListener {
-            var nums = 0
-            while (nums < 10) {
-                val generatedScore = generate_problem()
-                score += generatedScore // Update the score
-                Toast.makeText(this, "Reaches 2", Toast.LENGTH_SHORT).show()
-                nums += 1
-            }
-            Toast.makeText(this, "Score: $score", Toast.LENGTH_LONG).show() // Show the total score
-        }
-    }
-
-    fun generate_problem(): Int {
-        var score = 0 // Declare a local score variable for this problem
         val solution_input = findViewById<EditText>(R.id.solution_input)
         val submit = findViewById<Button>(R.id.submitsolution_button)
-        var top_operand = 0
-        var bottom_operand = 0
-        var operation = 0
-        top_operand = (1..99).random()
-        findViewById<TextView>(R.id.top_operand).text = top_operand.toString()
-        bottom_operand = (1..20).random()
-        findViewById<TextView>(R.id.bottom_operand).text = bottom_operand.toString()
-        operation = (1..2).random()
-        Toast.makeText(this, "reaches", Toast.LENGTH_LONG).show()
-        if (operation == 1) {
-            findViewById<TextView>(R.id.operation).text = "+"
-        } else {
-            findViewById<TextView>(R.id.operation).text = "-"
-        }
-        submit.setOnClickListener {
-            val guess = solution_input.text.toString().toInt()
-            if (operation == 1) {
-                if ((top_operand + bottom_operand) == guess) {
-                    score += 1 // Update the score for this problem
+        val generate = findViewById<Button>(R.id.generate_button)
+
+        generate.setOnClickListener {
+            var score = 0
+            var nums = 0
+            var top_operand = generate_top()
+            var bottom_operand = generate_bottom()
+            var operation = generate_operation()
+            findViewById<TextView>(R.id.top_operand).text = top_operand.toString()
+            findViewById<TextView>(R.id.bottom_operand).text = bottom_operand.toString()
+            submit.setOnClickListener {
+                if(nums > 10){
+                    Toast.makeText(this, "Game Over! Your Score Is: $score", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
                 }
-            } else {
-                if ((top_operand - bottom_operand) == guess) {
-                    score += 1 // Update the score for this problem
+                val guess = solution_input.text.toString().toInt()
+                if (operation == 1) {
+                    if ((top_operand + bottom_operand) == guess) {
+                        score += 1
+                    }
+                } else {
+                    if ((top_operand - bottom_operand) == guess) {
+                        score += 1
+                    }
                 }
+
+                top_operand = generate_top()
+                bottom_operand = generate_bottom()
+                operation = generate_operation()
+                findViewById<TextView>(R.id.top_operand).text = top_operand.toString()
+                findViewById<TextView>(R.id.bottom_operand).text = bottom_operand.toString()
+                if (operation == 1) {
+                    findViewById<TextView>(R.id.operation).text = "+"
+                } else {
+                    findViewById<TextView>(R.id.operation).text = "-"
+                }
+                nums += 1
+
+
             }
-            // You don't need return@setOnClickListener here
+
+            return@setOnClickListener
         }
-        return score // Return the score for this problem
+    }
+
+    fun generate_top(): Int {
+        var vals = (1..99).random()
+        return vals
+    }
+
+    fun generate_bottom(): Int {
+        var vals = (1..20).random()
+        return vals
+    }
+
+    fun generate_operation(): Int {
+        var vals = (1..2).random()
+        return vals
     }
 }
-
-
-
