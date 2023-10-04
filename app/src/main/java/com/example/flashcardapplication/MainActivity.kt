@@ -1,5 +1,6 @@
 package com.example.flashcardapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import androidx.activity.ComponentActivity
@@ -33,8 +34,10 @@ class MainActivity : ComponentActivity() {
                 incorrect_toast.show()
             }
             else{
-                var correct_toast = Toast.makeText(this,"Login Successful!" , Toast.LENGTH_SHORT)
+                var correct_toast = Toast.makeText(this,"Welcome Usernamez!" , Toast.LENGTH_SHORT)
                 correct_toast.show()
+                val flashcards = Intent(this, Flashcards::class.java)
+                startActivity(flashcards)
             }
             }
 

@@ -2,4 +2,7 @@
 <resources>
 
     <style name="Theme.FlashcardApplication" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize theme attributes here -->
+    </style>
 </resources>

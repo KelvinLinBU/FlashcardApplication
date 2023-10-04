@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Flashcards"
+    android:theme="@style/AppTheme"
+
+    >
+
+
+
+    <TextView
+        android:id="@+id/bottom_operand"
+        android:layout_width="126dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginBottom="44dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/generate_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toEndOf="@+id/operation"
+        app:layout_constraintTop_toBottomOf="@+id/top_operand"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/flashtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="64dp"
+        android:text="Flashcard Application"
+        android:textAlignment="center"
+        android:textSize="30dp"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/top_operand"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/bottom_operand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.769"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flashtitle"
+        app:layout_constraintVertical_bias="0.075" />
+
+    <TextView
+        android:id="@+id/operation"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/solution_text"
+        app:layout_constraintEnd_toStartOf="@+id/bottom_operand"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.701" />
+
+    <Button
+        android:id="@+id/generate_button"
+        android:layout_width="158dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="160dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/solution_text"
+        android:layout_width="102dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="80dp"
+        android:text="Input Solution:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintEnd_toStartOf="@+id/solution_input" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/solution_input"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:hint="guess"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/submitsolution_button"
+        app:layout_constraintStart_toEndOf="@+id/solution_text"
+        app:layout_constraintTop_toBottomOf="@+id/generate_button"
+        app:layout_constraintVertical_bias="0.382" />
+
+    <Button
+        android:id="@+id/submitsolution_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toEndOf="@+id/solution_input"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.898" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
