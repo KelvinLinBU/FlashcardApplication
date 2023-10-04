@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:theme="@style/AppTheme"
     tools:context=".Flashcards"
-
+    android:configChanges="orientation|screenSize"
     >
 
 
@@ -39,27 +39,27 @@
         android:id="@+id/top_operand"
         android:layout_width="123dp"
         android:layout_height="117dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="140dp"
         android:textAlignment="center"
         android:textSize="75dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.795"
+        app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/operation"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="180dp"
         android:textAlignment="center"
         android:textSize="75dp"
         app:layout_constraintEnd_toStartOf="@+id/bottom_operand"
         app:layout_constraintHorizontal_bias="0.015"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flashtitle" />
-
 
     <Button
         android:id="@+id/generate_button"

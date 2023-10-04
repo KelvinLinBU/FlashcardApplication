@@ -43,8 +43,8 @@ class Flashcards : ComponentActivity() {
                 findViewById<TextView>(R.id.operation).text = "-"
             }
             submit.setOnClickListener {
-                if(nums > 10){
-                    Toast.makeText(this, "Game Over! Your Score Is: $score", Toast.LENGTH_SHORT).show()
+                if(nums > 9){
+                    Toast.makeText(this, "Game Over! Your Score Is: $score/10", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
                 }
                 val guess = solution_input.text.toString().toInt()
